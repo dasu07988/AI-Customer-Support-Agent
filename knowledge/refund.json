@@ -1,0 +1,10 @@
+{
+  "refund_policy": {
+    "refund_period": "30 days",
+    "conditions": [
+      "Product must not be damaged.",
+      "Proof of purchase is required.",
+      "Refunds are processed within 5-7 business days."
+    ]
+  }
+}

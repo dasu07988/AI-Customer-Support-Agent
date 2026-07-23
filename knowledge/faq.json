@@ -1,0 +1,16 @@
+{
+  "faq": [
+    {
+      "question": "What are your business hours?",
+      "answer": "We are open Monday to Friday from 9:00 AM to 6:00 PM and Saturday from 9:00 AM to 1:00 PM."
+    },
+    {
+      "question": "How can I contact support?",
+      "answer": "You can email us at support@technovasolutions.com or call +94 11 234 5678."
+    },
+    {
+      "question": "Where is your company located?",
+      "answer": "Our headquarters are located in Colombo, Sri Lanka."
+    }
+  ]
+}

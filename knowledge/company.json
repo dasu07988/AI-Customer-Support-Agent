@@ -1,0 +1,21 @@
+{
+  "company": {
+    "name": "TechNova Solutions",
+    "description": "TechNova Solutions is a software development and AI automation company specializing in workflow automation, web applications, and enterprise AI solutions.",
+    "industry": "Information Technology",
+    "business_hours": {
+      "monday_friday": "09:00 AM - 06:00 PM",
+      "saturday": "09:00 AM - 01:00 PM",
+      "sunday": "Closed"
+    },
+    "contact": {
+      "email": "support@technovasolutions.com",
+      "phone": "+94 11 234 5678",
+      "website": "https://www.technovasolutions.com"
+    },
+    "address": {
+      "city": "Colombo",
+      "country": "Sri Lanka"
+    }
+  }
+}

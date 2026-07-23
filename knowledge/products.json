@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "P001",
+      "name": "AI Customer Support Agent",
+      "description": "AI-powered customer support automation workflow.",
+      "price": "$299"
+    },
+    {
+      "id": "P002",
+      "name": "Lead Capture Automation",
+      "description": "Automatically captures and stores leads from websites.",
+      "price": "$199"
+    },
+    {
+      "id": "P003",
+      "name": "Invoice Processing AI",
+      "description": "AI workflow for extracting and processing invoices.",
+      "price": "$399"
+    }
+  ]
+}
