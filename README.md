@@ -1,7 +1,7 @@
 # 🤖 AI Customer Support Agent — n8n & Google Gemini
 
 <p align="center">
-  <img src="assets/banner.png" alt="AI Customer Support Agent Banner" width="100%">
+  <img src="assets/ChatGPT Image Jul 24, 2026, 08_31_10 PM.png" alt="AI Customer Support Agent Banner" width="100%">
 </p>
 
 <p align="center">
@@ -75,7 +75,7 @@ Architecture is modular by design — built to extend into RAG, vector search, C
 
 <p align="center">
 
-<img src="docs/architecture/Architecture Diagram AI ChatBot (1).png" width="420">
+<img src="docs/architecture/Architecture Diagram AI ChatBot (1).png" width="120">
 
 </p>
 
