@@ -91,6 +91,41 @@ Architecture is modular by design — built to extend into RAG, vector search, C
 | 8 | API returns the generated response |
 
 ---
+## 📸 Workflow
+
+## 📸 Workflow
+
+<p align="center">
+  <img src="docs/workflow/workflow.png" alt="AI Customer Support Workflow" width="100%">
+</p>
+
+<p align="center">
+<b>Figure 1.</b> End-to-end AI Customer Support workflow built with n8n, Google Gemini 2.5 Flash, REST Webhooks, and Google Sheets.
+</p>
+
+## 📊 Google Sheets Conversation Logs
+
+<p align="center">
+  <img src="docs/workflow/googleSheet.png" alt="Google Sheets Conversation Logs" width="100%">
+</p>
+
+<p align="center">
+<b>Figure 2.</b> Every customer interaction is automatically logged with the timestamp, customer message, category, and AI-generated response.
+</p>
+
+## 🧪 API Testing
+
+<p align="center">
+  <img src="docs/workflow/Postman ss.png" alt="Postman API Testing" width="100%">
+</p>
+
+<p align="center">
+<b>Figure 3.</b> End-to-end API testing using Postman demonstrating successful request validation and AI-generated responses.
+</p>
+
+---
+
+---
 
 ## ⚙️ Technology Stack
 
