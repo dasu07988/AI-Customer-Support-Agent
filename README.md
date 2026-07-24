@@ -1,4 +1,4 @@
-# 🤖 AI Customer Support Agent
+# 🤖 AI Customer Support Agent — n8n & Google Gemini
 
 <p align="center">
   <img src="assets/banner.png" alt="AI Customer Support Agent Banner" width="100%">
@@ -6,387 +6,277 @@
 
 <p align="center">
 
-![Status](https://img.shields.io/badge/Status-In%20Development-success)
+![Status](https://img.shields.io/badge/Status-MVP%20Completed-success)
 ![Version](https://img.shields.io/badge/Version-v1.0-blue)
-![n8n](https://img.shields.io/badge/n8n-Workflow%20Automation-orange)
-![Google Gemini](https://img.shields.io/badge/Google-Gemini-blue)
+![n8n](https://img.shields.io/badge/n8n-Workflow%20Automation-EA4B28)
+![Google Gemini](https://img.shields.io/badge/Google-Gemini%202.5%20Flash-4285F4)
+![Webhook API](https://img.shields.io/badge/API-REST%20Webhook-success)
+![Google Sheets](https://img.shields.io/badge/Logging-Google%20Sheets-34A853)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
-![Open Source](https://img.shields.io/badge/Open%20Source-Yes-black)
 
 </p>
 
-> **An AI-powered customer support automation system built with n8n and Google Gemini to automate customer interactions, retrieve business knowledge, and deliver intelligent responses.**
+<p align="center">
+<b>An AI-powered customer support automation system built with n8n, Google Gemini 2.5 Flash, and Google Sheets — turning repetitive support tickets into instant, AI-generated responses.</b>
+</p>
 
 ---
 
-# 📖 Table of Contents
-
-* Overview
-* Business Problem
-* Solution
-* Features
-* System Architecture
-* Workflow
-* Technology Stack
-* Repository Structure
-* Prerequisites
-* Installation
-* Configuration
-* Usage
-* Sample Conversation
-* Documentation
-* Development Roadmap
-* Screenshots
-* Demo
-* Future Improvements
-* Contributing
-* License
-* Author
+## 📖 Contents
+[Overview](#-overview) • [Problem & Solution](#-the-problem) • [Architecture](#️-system-architecture) • [Tech Stack](#️-technology-stack) • [Features](#-features) • [API Docs](#-api-documentation) • [Setup](#-installation) • [Roadmap](#️-roadmap) • [Author](#-author)
 
 ---
 
-# 🚀 Overview
+## 🚀 Overview
 
-AI Customer Support Agent is an enterprise-inspired AI automation project designed to demonstrate how modern businesses can automate customer support using workflow automation and Generative AI.
+The AI Customer Support Agent is an end-to-end workflow automation system built with **n8n** and **Google Gemini 2.5 Flash**.
 
-The system receives customer inquiries, understands customer intent using Google Gemini, retrieves relevant information from a knowledge base, generates intelligent responses, and automatically delivers those responses through supported communication channels.
+The workflow receives customer requests through a REST Webhook, validates the payload, intelligently routes frequently asked questions, injects business knowledge, generates AI-powered responses, logs every interaction into Google Sheets, and returns the response in real time.
 
-This project is built as a portfolio project to showcase practical skills in AI workflow automation, API integration, prompt engineering, and modern business automation.
+The project demonstrates practical skills in:
 
----
-
-# 🎯 Business Problem
-
-Customer support teams often face challenges such as:
-
-* Slow response times
-* Repetitive customer questions
-* High operational costs
-* Inconsistent responses
-* Manual ticket handling
-* Limited support outside business hours
-
-These issues reduce productivity and negatively affect customer satisfaction.
+- AI Workflow Automation
+- Prompt Engineering
+- REST API Development
+- Business Process Automation
+- Google Workspace Integration
+- Low-Code AI Engineering
 
 ---
 
-# 💡 Solution
+## 🎯 The Problem
 
-The AI Customer Support Agent automates repetitive support tasks by combining Artificial Intelligence with workflow automation.
+Support teams burn significant time answering the same FAQs — refund policy, shipping, business hours — leading to:
 
-The system can:
+- Slow response times & higher operational cost
+- Inconsistent answers across agents
+- No support coverage outside business hours
+- Support staff stuck on repetitive work instead of complex issues
 
-* Receive customer requests
-* Understand customer intent
-* Search company knowledge
-* Generate intelligent responses
-* Send replies automatically
-* Log customer interactions
-* Support future enterprise RAG capabilities
+## 💡 The Solution
 
----
+Instead of a human reading and replying to every message, the workflow:
 
-# ✨ Features
+1. Accepts requests via REST Webhook
+2. Validates the payload
+3. Routes the query to the right FAQ category
+4. Injects structured business knowledge (prevents hallucination)
+5. Generates a response with Google Gemini
+6. Logs every conversation to Google Sheets
+7. Returns the response instantly through the API
 
-## Version 1
-
-* AI-powered customer support
-* Google Gemini integration
-* Telegram chatbot
-* Gmail notifications
-* Google Sheets logging
-* FAQ knowledge base
-* Webhook API
-
-## Planned Features
-
-* Conversation memory
-* Human handoff
-* Ticket creation
-* Escalation workflow
-* Pinecone vector database
-* Retrieval-Augmented Generation (RAG)
-* PDF knowledge base
-* CRM integration
-* Multi-agent AI workflow
+Architecture is modular by design — built to extend into RAG, vector search, CRM integration, and multi-agent systems (see [Roadmap](#️-roadmap)).
 
 ---
 
-# 🏗️ System Architecture
 
-> **Architecture diagram will be added after completing Version 1.**
 
-```text
-Customer
-      │
-      ▼
-Telegram / Website / Webhook
-      │
-      ▼
-n8n Workflow
-      │
- ┌──────────────┬──────────────┐
- ▼              ▼              ▼
-Gemini     Knowledge Base   Business Logic
-      │
-      ▼
-AI Response
-      │
- ┌────┴───────────────┐
- ▼                    ▼
-Telegram      Gmail / Google Sheets
+## 🏗️ System Architecture
+
+<p align="center">
+
+<img src="docs/architecture/Architecture Diagram AI ChatBot (1).png" width="420">
+
+</p>
+
+| Step | Description |
+|------|-------------|
+| 1 | Customer submits request via Webhook API |
+| 2 | Payload validated |
+| 3 | FAQ Router categorizes the request |
+| 4 | Business Knowledge Base injects company context |
+| 5 | Gemini generates AI response |
+| 6 | Log formatted for storage |
+| 7 | Google Sheets stores the conversation |
+| 8 | API returns the generated response |
+
+---
+
+## ⚙️ Technology Stack
+
+| Category | Technology |
+|---|---|
+| Workflow Automation | n8n |
+| AI Model | Google Gemini 2.5 Flash |
+| Approach | Low-Code |
+| API | REST Webhook |
+| Knowledge Base | Business Context (JSON) |
+| Logging | Google Sheets |
+| Testing | Postman |
+| Version Control | Git & GitHub |
+| Planned | Pinecone Vector DB, RAG |
+
+---
+
+## ✨ Features
+
+
+- ✅ AI-powered Customer Support
+- ✅ Google Gemini 2.5 Flash Integration
+- ✅ REST Webhook API
+- ✅ FAQ Routing
+- ✅ Business Knowledge Injection
+- ✅ Hallucination Prevention
+- ✅ Input Validation
+- ✅ Google Sheets Conversation Logging
+- ✅ Modular n8n Workflow
+- ✅ Postman Tested
+
+---
+
+## 📡 API Documentation
+
+**Endpoint**
+```http
+POST /webhook/customer-support
+```
+
+**Request**
+```json
+{ "message": "What is your refund policy?" }
+```
+
+**Successful Response**
+```json
+{
+    "Timestamp": "2026-07-24T10:21:03.550-04:00",
+    "Customer Message": "What is your refund policy?",
+    "Category": "General",
+    "AI Response": "Our refund policy allows you to request a refund within 30 days of purchase, provided the product is unused and in its original condition."
+}
+```
+
+**Invalid Request → Validation Response**
+```json
+{ "success": false, "error": "Message is required." }
+
+POST /webhook/customer-support
+
+Status: 200 OK
+
+Content-Type: application/json
+
 ```
 
 ---
 
-# 🔄 Workflow
+## 📊 Project Highlights
 
-1. Customer submits a question.
-2. The request is received through Telegram or a Webhook.
-3. n8n starts the automation workflow.
-4. Google Gemini analyzes the customer's request.
-5. Relevant information is retrieved from the knowledge base.
-6. AI generates a response.
-7. The response is sent back to the customer.
-8. The interaction is logged for future reference.
-
+| Metric | Value |
+|---------|-------|
+| Workflow Nodes | 10+ |
+| AI Model | Google Gemini 2.5 Flash |
+| Workflow Engine | n8n |
+| API Type | REST Webhook |
+| Logging | Google Sheets |
+| Status | MVP Completed |
 ---
 
-# ⚙️ Technology Stack
 
-| Category            | Technology         |
-| ------------------- | ------------------ |
-| Workflow Automation | n8n                |
-| AI Model            | Google Gemini      |
-| Knowledge Base      | JSON               |
-| Messaging           | Telegram           |
-| Email               | Gmail              |
-| Logging             | Google Sheets      |
-| APIs                | Webhooks           |
-| Version Control     | Git & GitHub       |
-| Vector Database     | Pinecone (Planned) |
-| Retrieval           | RAG (Planned)      |
-
----
-
-# 📂 Repository Structure
+## 📂 Repository Structure
 
 ```text
 AI-Customer-Support-Agent/
-
 ├── assets/
-├── docs/
-├── knowledge-base/
-│   ├── faq.json
-│   └── sample-data.json
-├── prompts/
-│   └── system-prompt.md
+├── docs/architecture.png
+├── workflow/AI-Customer-Support-Agent.json
 ├── screenshots/
-├── workflows/
-│   └── customer-support-agent.json
-├── .env.example
-├── .gitignore
+├── examples/{request.json, response.json}
 ├── LICENSE
 └── README.md
 ```
 
 ---
 
-# ✅ Prerequisites
+## ✅ Prerequisites
 
-Before running this project, ensure you have:
+n8n · Google Gemini API key · Google Account & Sheets · Postman (for testing)
 
-* n8n
-* Google Gemini API Key
-* Telegram Bot Token
-* Gmail Account (App Password)
-* Google Sheets Account
-
----
-
-# 🚀 Installation
-
-Clone the repository:
+## 🚀 Installation
 
 ```bash
 git clone https://github.com/dasu07988/AI-Customer-Support-Agent.git
-```
-
-Navigate to the project directory:
-
-```bash
 cd AI-Customer-Support-Agent
 ```
 
-Import the workflow into n8n:
+1. Import `workflow/AI-Customer-Support-Agent.json` into n8n
+2. Configure credentials: **Google Gemini** (AI response generation) & **Google Sheets** (logging)
+3. Activate the workflow
 
-```
-workflows/customer-support-agent.json
-```
+## ▶️ Usage
 
-Configure all required credentials and activate the workflow.
+Start the workflow → activate the webhook → send a POST request via Postman → get the AI response → verify the log entry in Google Sheets.
+
+## 🧪 Testing
+
+Validated end-to-end using Postman, Google Sheets, Google Gemini, and a local n8n environment.
+
+---
+## 🗺️ Roadmap
+
+| Version | Features |
+|---------|----------|
+| ✅ **v1** | Gemini Integration, Webhook API, FAQ Routing, Business Knowledge, Google Sheets Logging |
+| 🚧 **v2** | Conversation Memory, Human Handoff, CRM Integration, Email Notifications |
+| 🚀 **v3** | Pinecone, RAG, Semantic Search, Multi-Agent AI, Analytics Dashboard |
 
 ---
 
-# ⚙️ Configuration
+## ⭐ Why This Project
 
-Create a `.env` file based on `.env.example`.
-
-Example:
-
-```env
-GEMINI_API_KEY=your_api_key
-TELEGRAM_BOT_TOKEN=your_bot_token
-GMAIL_USER=your_email
-GMAIL_APP_PASSWORD=your_password
-```
+Goes beyond a simple chatbot demo — a structured, extensible automation workflow realistically adaptable for small/medium businesses, showcasing AI workflow automation, low-code development, prompt engineering, REST API integration, and enterprise-style workflow design.
 
 ---
 
-# ▶️ Usage
+## 🎯 Business Impact
 
-1. Start n8n.
-2. Import the workflow.
-3. Configure API credentials.
-4. Activate the workflow.
-5. Send a message through Telegram or the configured webhook.
-6. The AI will generate and return a response automatically.
+This solution helps organizations:
 
----
-
-# 💬 Sample Conversation
-
-**Customer**
-
-> Hi, how can I reset my password?
-
-**AI**
-
-> You can reset your password by selecting **Forgot Password** on the login page. A password reset link will be sent to your registered email address.
+- Reduce repetitive customer support tasks
+- Improve response consistency
+- Automate FAQ handling
+- Increase customer satisfaction
+- Reduce operational costs
+- Scale customer support with AI
 
 ---
 
-**Customer**
+## 🤝 Contributing
 
-> What are your business hours?
+Fork → create a feature branch → commit → push → open a Pull Request.
 
-**AI**
+## 📄 License
 
-> Our support team is available Monday to Friday from 9:00 AM to 6:00 PM.
-
----
-
-# 📚 Documentation
-
-Project documentation will be available in:
-
-* `docs/`
-* `knowledge-base/`
-* `prompts/`
-* `workflows/`
+MIT License.
 
 ---
 
-# 🗺️ Development Roadmap
-
-### ✅ Version 1
-
-* Google Gemini
-* Telegram
-* Gmail
-* Google Sheets
-* FAQ Knowledge Base
-* Webhooks
-
-### 🚧 Version 2
-
-* Memory
-* Human Handoff
-* Ticket Management
-* Escalation Workflow
-* Customer History
-
-### 🚀 Version 3
-
-* Pinecone
-* Enterprise RAG
-* Semantic Search
-* PDF Knowledge Base
-* CRM Integration
-* Multi-Agent AI
-
----
-
-# 📸 Screenshots
-
-The following screenshots will be added after Version 1 is completed.
-
-* Dashboard
-* n8n Workflow
-* Telegram Conversation
-* Gmail Notification
-* Google Sheets Logs
-
----
-
-# 🎥 Demo
-
-Coming Soon
-
-* Demo Video
-* Workflow Walkthrough
-* End-to-End Demonstration
-
----
-
-# 📈 Future Improvements
-
-* WhatsApp Integration
-* Slack Integration
-* Voice Assistant
-* Customer Sentiment Analysis
-* Analytics Dashboard
-* CRM Integration
-* Multi-language Support
-* Enterprise Authentication
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome.
-
-1. Fork the repository.
-2. Create a new feature branch.
-3. Commit your changes.
-4. Submit a Pull Request.
-
----
-
-# 📄 License
-
-This project is licensed under the **MIT License**.
-
----
-
-# 👩‍💻 Author
+## 👩‍💻 Author
 
 **Dasuni Jayasundara**
 
-BSc (Hons) Information Technology Undergraduate
 
-### Interests
 
-* Artificial Intelligence
-* Workflow Automation
-* Generative AI
-* Retrieval-Augmented Generation (RAG)
-* Enterprise AI Solutions
-* Cloud Computing
+### Areas of Interest
+
+- Artificial Intelligence
+- AI Workflow Automation
+- Prompt Engineering
+- Enterprise AI
+- Low-Code AI Solutions
+
+- GitHub: [github.com/dasu07988](https://github.com/dasu07988)
+- LinkedIn: *(add link)*
 
 ---
 
+---
+
+<---
+
 <p align="center">
+
+Built with ❤️ using **n8n**, **Google Gemini 2.5 Flash**, and **Google Workspace**
 
 ⭐ If you found this project useful, please consider giving it a **Star**.
 
